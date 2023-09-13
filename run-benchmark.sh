@@ -18,6 +18,8 @@ for SF in ${SFS[@]}; do
     echo "### Running benchmark on Umbra for SF${SF} finished"
 done
 
+cd ..
+
 for SF in ${SFS[@]}; do
     echo "### Running scoring script on Umbra for SF${SF} started"
     scripts/score-full.sh umbra ${SF} | tee logs/scoring-umbra-sf${SF}.log
