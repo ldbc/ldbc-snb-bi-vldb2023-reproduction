@@ -22,7 +22,7 @@ cd ..
 
 for SF in ${SFS[@]}; do
     echo "### Running scoring script on Umbra for SF${SF} started"
-    scripts/score-full.sh umbra ${SF} | tee umbra/logs/scoring-umbra-sf${SF}.log
+    scripts/score-full.sh umbra ${SF} | tee scoring/scoring-umbra-sf${SF}.log
     echo "### Running scoring script on Umbra for SF${SF} finished"
 done
 
