@@ -22,7 +22,7 @@ cd ..
 
 for SF in ${SFS[@]}; do
     echo "### Running scoring script on Umbra for SF${SF} started"
-    scripts/score-full.sh umbra ${SF} | tee logs/scoring-umbra-sf${SF}.log
+    scripts/score-full.sh umbra ${SF} | tee umbra/logs/scoring-umbra-sf${SF}.log
     echo "### Running scoring script on Umbra for SF${SF} finished"
 done
 
@@ -30,4 +30,4 @@ done
 rm -f scoring/bi.duckdb
 
 # save zip file
-zip -r umbra-results.zip output/ logs/ scoring/
+zip -r umbra-results.zip umbra/output/ umbra/logs/ scoring/
