@@ -42,9 +42,9 @@ The reproduction scripts use these pre-generated data sets.
 
 ## Instructions
 
-1. Start an [`m6id.32xlarge`](https://instances.vantage.sh/aws/ec2/r6id.32xlarge) instance on AWS EC2. The default root disk size (8 GB) is sufficient.
+1. Start an [`m6id.32xlarge`](https://instances.vantage.sh/aws/ec2/r6id.32xlarge) instance on AWS EC2 using the Amazon Machine Image (AMI) Ubuntu 22.04 LTS (64-bit (x86)). The default root volume size (8 GB) is sufficient. Set an SSH key under the "Key pair (login")" section.
 
-1. Log in to the machine using SSH.
+1. Log in to the machine using your key pair.
 
 1. Open a `tmux` session and run:
 
@@ -55,14 +55,18 @@ The reproduction scripts use these pre-generated data sets.
     ./prepare-instance.sh
     ```
 
+    This will install the required Ubuntu packages, create a RAID0 disk and mount it under `/data`. Then, it will clone the [LDBC SNB BI repository (v1.0.3.1)](https://github.com/ldbc/ldbc_snb_bi/releases/tag/v1.0.3.1).
+
 1. Log out and log in again (this is required by Docker).
 
-2. To download the required artifacts (Umbra Docker image, data sets) and run the benchmark, issue the following commands:
+2. Open a `tmux session` and run:
 
     ```bash
     cd ${HOME}/ldbc-snb-bi-vldb2023-reproduction
     ./prepare-benchmark.sh && ./run-benchmark.sh
     ```
+
+    These scripts will download the required artifacts (Umbra Docker image, data sets), generate the query substitution parameters, and run the benchmark.
 
     Note: if there are no errors, these scripts will download the artifacts and perform three benchmarks runs (SF30, SF100, and SF300) without requiring user interaction.
 
