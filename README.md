@@ -42,7 +42,7 @@ The reproduction scripts use these pre-generated data sets.
 
 ## Instructions
 
-1. Start an [`m6id.32xlarge`](https://instances.vantage.sh/aws/ec2/r6id.32xlarge) instance on AWS EC2 using the Amazon Machine Image (AMI) Ubuntu 22.04 LTS (64-bit (x86)). The default root volume size (8 GB) is sufficient. Set an SSH key under the "Key pair (login")" section.
+1. Start an [`m6id.32xlarge`](https://instances.vantage.sh/aws/ec2/r6id.32xlarge) instance on AWS EC2 using the Amazon Machine Image (AMI) Ubuntu 22.04 LTS (64-bit (x86)). The default root volume size (8 GB) is sufficient. Set an SSH key under the "Key pair (login)" section.
 
 1. Log in to the machine using your key pair.
 
